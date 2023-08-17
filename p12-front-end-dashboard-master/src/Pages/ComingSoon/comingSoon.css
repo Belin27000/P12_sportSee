@@ -1,0 +1,24 @@
+.CommingSoon {
+    /* margin-top: 10rem; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.CommingSoon img {
+    width: 300px;
+    height: auto;
+}
+
+.CsTitle {
+    font-size: 5rem;
+    color: black;
+}
+
+.CsMessage {
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+}
