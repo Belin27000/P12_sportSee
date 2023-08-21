@@ -1,0 +1,26 @@
+.SideMenu {
+    width: 117px;
+    background-color: black;
+    display: grid;
+    align-items: center;
+
+}
+
+.SideMenu ul {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 1.1rem 0;
+}
+
+.SideMenu img {
+    width: 64px;
+    height: 64px;
+}
+
+.SideMenuCopy {
+    color: white;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    font-size: 0.6rem;
+}
