@@ -1,0 +1,9 @@
+.Radar {
+    background-color: #282D30;
+    color: white;
+    border-radius: 10px;
+}
+
+.Radar .recharts-text {
+    font-size: 0.7rem;
+}

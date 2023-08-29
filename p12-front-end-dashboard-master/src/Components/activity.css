@@ -1,0 +1,24 @@
+.ActivityChart {
+    background-color: #FBFBFB;
+    border-radius: 10px;
+}
+
+
+.recharts-legend-item {
+    font-size: 0.7rem;
+}
+
+/* .recharts-surface {
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+} */
+
+.custom-tooltip {
+    color: white;
+    font-size: .5rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: start; */
+}

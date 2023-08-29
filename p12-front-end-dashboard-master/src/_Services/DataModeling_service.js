@@ -6,24 +6,61 @@ class DataModeling_service {
         this.userPerformance = Alldata.USER_PERFORMANCE;
     }
     getUserMainDataById(userId) {
-        let mainDataUser = this.userMainData.find(user => user.id === userId);
-
-        return mainDataUser;
+        // let mainDataUser = this.userMainData.find(user => user.id === userId);
+        // console.log(this.userMainData);
+        const allMainData = this.userMainData.find(user => user.id === parseInt(userId))
+        // console.log(allMainData);
+        const mainData = [{
+            userFirstName: allMainData.userInfos.firstName,
+            userLastName: allMainData.userInfos.lastName,
+            todayscore: allMainData.todayScore * 100
+        }]
+        const energyData = [{
+            calories: allMainData.keyData.calorieCount,
+            protein: allMainData.keyData.proteinCount,
+            carbohydrate: allMainData.keyData.carbohydrateCount,
+            lipid: allMainData.keyData.lipidCount
+        }]
+        // console.log(energyData);
+        return ({ mainData, energyData });
     }
 
     getUserActivityById(userId) {
-        let userActivity = this.userActivity.find(user => user.userId === userId);
-        return userActivity;
+
+        let userActivities = this.userActivity.find(user => user.userId === parseInt(userId));
+        const userSessionActivities = userActivities.sessions
+        let compteur = 1
+        const cleanUserActivity = userSessionActivities.map(item => ({
+            day: compteur++,
+            kilogram: item.kilogram,
+            calories: item.calories,
+        }))
+        return cleanUserActivity
     }
 
     getUserAverageSessionsById(userId) {
-        let userSessions = this.userAverageSessions.find(user => user.userId === userId);
-        return userSessions;
+        // console.log(this.userAverageSessions);
+
+        // let userSessions = this.userAverageSessions.find(user => user.userId === userId);
+        return this.userAverageSessions.find(user => user.userId === parseInt(userId));
     }
 
     getUserPerformanceById(userId) {
-        let userPerf = this.userPerformance.find(user => user.userId === userId);
-        return userPerf;
+        // console.log(this.userPerformance);
+        // console.log(this.userPerformance.find(user => user.userId === parseInt(userId)));
+
+        let userPerf = this.userPerformance.find(user => user.userId === parseInt(userId));
+        const userPerfArray = userPerf.data
+
+        const cleanUserPerfArray = userPerfArray.map(item => ({
+            "data": item.value,
+            "kind": userPerf.kind[item.kind]
+        }))
+        // console.log(cleanUserPerfArray);
+
+        return cleanUserPerfArray
+        // return this.userPerformance.find(user => user.userId === parseInt(userId));
+        // return cleanUserPerfArray
     }
 }
 
