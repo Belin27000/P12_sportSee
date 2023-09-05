@@ -1,3 +1,7 @@
+import { ModelBarChart } from "@/Components/Models/ModelBarChart.js";
+import { ModelLineChart } from "@/Components/Models/ModelLineChart.js";
+import { ModelRadarChart } from "@/Components/Models/ModelRadarChart.js";
+
 class DataModeling_service {
     constructor(Alldata) {
         this.userMainData = Alldata.USER_MAIN_DATA;
@@ -6,10 +10,7 @@ class DataModeling_service {
         this.userPerformance = Alldata.USER_PERFORMANCE;
     }
     getUserMainDataById(userId) {
-        // let mainDataUser = this.userMainData.find(user => user.id === userId);
-        // console.log(this.userMainData);
         const allMainData = this.userMainData.find(user => user.id === parseInt(userId))
-        // console.log(allMainData);
         const mainData = [{
             userFirstName: allMainData.userInfos.firstName,
             userLastName: allMainData.userInfos.lastName,
@@ -21,46 +22,34 @@ class DataModeling_service {
             carbohydrate: allMainData.keyData.carbohydrateCount,
             lipid: allMainData.keyData.lipidCount
         }]
-        // console.log(energyData);
         return ({ mainData, energyData });
     }
 
     getUserActivityById(userId) {
-
-        let userActivities = this.userActivity.find(user => user.userId === parseInt(userId));
-        const userSessionActivities = userActivities.sessions
-        let compteur = 1
-        const cleanUserActivity = userSessionActivities.map(item => ({
-            day: compteur++,
-            kilogram: item.kilogram,
-            calories: item.calories,
-        }))
-        return cleanUserActivity
+        //recupère les data de l'utilisateur et les envoi dans le model pour mise en forme avant affichage dans le BarChart
+        const data = this.userActivity.find(user => user.userId === parseInt(userId));
+        return new ModelBarChart(data)
     }
 
     getUserAverageSessionsById(userId) {
-        // console.log(this.userAverageSessions);
-
-        // let userSessions = this.userAverageSessions.find(user => user.userId === userId);
-        return this.userAverageSessions.find(user => user.userId === parseInt(userId));
+        const data = this.userAverageSessions.find(user => user.userId === parseInt(userId));
+        return new ModelLineChart(data)
     }
 
     getUserPerformanceById(userId) {
-        // console.log(this.userPerformance);
-        // console.log(this.userPerformance.find(user => user.userId === parseInt(userId)));
+        const data = this.userPerformance.find(user => user.userId === parseInt(userId));
+        // const userPerfArray = userPerf.data
 
-        let userPerf = this.userPerformance.find(user => user.userId === parseInt(userId));
-        const userPerfArray = userPerf.data
+        // const cleanUserPerfArray = userPerfArray.map(item => ({
+        //     "data": item.value,
+        //     "kind": userPerf.kind[item.kind]
+        // }))
 
-        const cleanUserPerfArray = userPerfArray.map(item => ({
-            "data": item.value,
-            "kind": userPerf.kind[item.kind]
-        }))
-        // console.log(cleanUserPerfArray);
-
-        return cleanUserPerfArray
-        // return this.userPerformance.find(user => user.userId === parseInt(userId));
         // return cleanUserPerfArray
+        const viewData = new ModelRadarChart(data)
+        // console.log(viewData);
+        // console.log(viewData);
+        return (viewData)
     }
 }
 

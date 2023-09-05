@@ -1,6 +1,11 @@
-.Average .recharts-surface {
+.Average {
     background-color: #FF0000;
+    width: 30%;
+    height: 250px;
+    border-radius: 10px;
 }
+
+
 
 
 .recharts-surface {

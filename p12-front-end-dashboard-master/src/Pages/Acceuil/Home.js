@@ -1,31 +1,24 @@
 import React from 'react';
-import DataModeling_service from '@/_Services/DataModeling_service.js'
+import DataModeling_service from '@/_Services/DataModeling_service'
 import AllData from '@/Assets/Api/db.json'
 import '@/Pages/Acceuil/home.css'
 import { useParams } from 'react-router-dom';
-import Activity from '@/Components/Activity.js';
-import AverageSessions from '@/Components/AverageSessions.js';
-import Intensity from '@/Components/Intensity.js';
-import Score from '@/Components/Score.js';
-import Energy from '@/Components/Energy.js';
+import Activity from '@/Components/Charts/BarChart/Activity';
+import AverageSessions from '@/Components/Charts/LineChart/AverageSessions';
+import Intensity from '@/Components/Charts/RadarChart/Intensity';
+import Score from '@/Components/Charts/RadialChart/Score';
+import Energy from '@/Components/Energy';
 
 const Home = () => {
     let { id } = useParams()
-    // console.log(id);
     const userData = AllData
     const userModel = new DataModeling_service(userData)
 
     const user = userModel.getUserMainDataById(id)
     const userActivity = userModel.getUserActivityById(id)
     const averageSessions = userModel.getUserAverageSessionsById(id)
-    // console.log(averageSessions)
-    // const userSession = userModel.getUserActivityById(id)
     const userPerf = userModel.getUserPerformanceById(id)
-    console.log(user);
-    // console.log(user.mainData[0]);
-    // console.log(userActivity);
-    // console.log(userSession);
-    // console.log(userPerf);
+
     return (
         <div className='Home'>
             <header>
@@ -36,13 +29,16 @@ const Home = () => {
                 <section className='Activity'>
                     <Activity sessions={userActivity} />
                     <article>
-                        <AverageSessions averageSessions={averageSessions.sessions} />
+                        <AverageSessions averageSessions={averageSessions} />
                         <Intensity kind={userPerf} />
                         <Score user={user} />
                     </article>
                 </section>
                 <aside className='Performance'>
-                    <Energy Energy={user.energyData} type="Calories" />
+                    <Energy Energy={user.energyData} type="calories" />
+                    <Energy Energy={user.energyData} type="proteines" />
+                    <Energy Energy={user.energyData} type="glucides" />
+                    <Energy Energy={user.energyData} type="lipides" />
                 </aside>
             </section>
 

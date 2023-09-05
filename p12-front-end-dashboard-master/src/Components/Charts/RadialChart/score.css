@@ -1,0 +1,11 @@
+.Score {
+    width: 30%;
+    height: 250px;
+    background-color: #FBFBFB;
+    border-radius: 10px;
+}
+
+.radialChart {
+    background-color: #FBFBFB;
+    border-radius: 10px;
+}
