@@ -1,6 +1,7 @@
 import { ModelBarChart } from "@/Components/Models/ModelBarChart.js";
 import { ModelLineChart } from "@/Components/Models/ModelLineChart.js";
 import { ModelRadarChart } from "@/Components/Models/ModelRadarChart.js";
+import { ModelRadialChart } from "@/Components/Models/ModelRadialChart.js";
 
 class DataModeling_service {
     constructor(Alldata) {
@@ -11,18 +12,10 @@ class DataModeling_service {
     }
     getUserMainDataById(userId) {
         const allMainData = this.userMainData.find(user => user.id === parseInt(userId))
-        const mainData = [{
-            userFirstName: allMainData.userInfos.firstName,
-            userLastName: allMainData.userInfos.lastName,
-            todayscore: allMainData.todayScore * 100
-        }]
-        const energyData = [{
-            calories: allMainData.keyData.calorieCount,
-            protein: allMainData.keyData.proteinCount,
-            carbohydrate: allMainData.keyData.carbohydrateCount,
-            lipid: allMainData.keyData.lipidCount
-        }]
-        return ({ mainData, energyData });
+
+        const data = new ModelRadialChart(allMainData)
+        // console.log(data);
+        return data
     }
 
     getUserActivityById(userId) {

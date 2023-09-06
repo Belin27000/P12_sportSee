@@ -6,39 +6,53 @@ import lipides from '@/Assets/fat-icon.png'
 import '@/Components/energy.css'
 
 
-const Energy = ({ Energy, type }) => {
+const Energy = ({ Energy }) => {
+    console.log(Energy);
+    // const [energyType, setEnergyType] = useState({})
+    // const [energyValue, setEnergyValue] = useState("")
 
-    const [energyType, setEnergyType] = useState({})
-    const [energyValue, setEnergyValue] = useState("")
 
+    // useEffect(() => {
+    //     if (type === 'calories') {
+    //         setEnergyType(calories)
+    //         setEnergyValue(Energy[0].calories + "Kcal")
+    //     } else if (type === 'proteines') {
+    //         setEnergyType(protein)
+    //         setEnergyValue(Energy[0].protein + "g")
 
-    useEffect(() => {
-        if (type === 'calories') {
-            setEnergyType(calories)
-            setEnergyValue(Energy[0].calories + "Kcal")
-        } else if (type === 'proteines') {
-            setEnergyType(protein)
-            setEnergyValue(Energy[0].protein + "g")
-
-        } else if (type === 'glucides') {
-            setEnergyType(glucides)
-            setEnergyValue(Energy[0].carbohydrate + "g")
-        } else if (type === 'lipides') {
-            setEnergyType(lipides)
-            setEnergyValue(Energy[0].lipid + "g")
-        }
-    }, [])
+    //     } else if (type === 'glucides') {
+    //         setEnergyType(glucides)
+    //         setEnergyValue(Energy[0].carbohydrate + "g")
+    //     } else if (type === 'lipides') {
+    //         setEnergyType(lipides)
+    //         setEnergyValue(Energy[0].lipid + "g")
+    //     }
+    // }, [])
 
     return (
-        <>
-            <div className='Energy'>
-                <img src={energyType} alt='SideBar Yoga logo' />
-                <div className='energyInfos'>
-                    <p className='evalue'>{energyValue}</p>
-                    <p className='type'>{type}</p>
-                </div>
-            </div>
-        </>
+        <div className='Energy'>
+            {
+                Energy.map((keyData) => {
+                    return (
+                        <div className='nutriment' key={keyData.name}>
+                            <div className='nutriment-logo'>
+                                <img src={keyData.imageData} alt='nutriment-Logo' />
+                            </div>
+                            <div className='energyInfos'>
+                                <h2>{keyData.value}</h2>
+                                <p>{keyData.name}</p>
+                            </div>
+
+                        </div>
+
+
+                    )
+                })
+                //     < img src={energyType} alt='SideBar Yoga logo' />
+
+            }
+        </div>
+
     );
 };
 

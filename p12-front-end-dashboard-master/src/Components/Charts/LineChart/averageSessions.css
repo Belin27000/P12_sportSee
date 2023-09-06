@@ -3,6 +3,19 @@
     width: 30%;
     height: 250px;
     border-radius: 10px;
+    position: relative;
+}
+
+.Average h3 {
+    font-size: 15px;
+    color: white;
+    position: absolute;
+    text-align: start;
+    top: 10%;
+    left: 10%;
+    width: 135px;
+    margin: 0;
+    opacity: 0.5;
 }
 
 

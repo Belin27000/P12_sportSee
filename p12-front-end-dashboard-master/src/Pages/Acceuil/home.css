@@ -42,12 +42,11 @@ article {
 }
 
 aside {
-    width: 20%;
+    width: 15%;
     /* background-color: aqua; */
 }
 
 .Performance {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
 }

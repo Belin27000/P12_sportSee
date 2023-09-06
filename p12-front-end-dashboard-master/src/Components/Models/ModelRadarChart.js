@@ -1,14 +1,14 @@
 class ModelRadarChart {
     constructor(data) {
-        // console.log(data);
-        this.USER_PERFORMANCE = {
+        this.allData = {
             // kind: {},
             data: data.data.map(dataItem => ({
                 value: dataItem.value,
                 kind: this.getKindText(dataItem.kind)
             }))
+                .reverse()
         };
-        return this.USER_PERFORMANCE.data
+        return this.allData.data
     }
     getKindText(kindId) {
 
@@ -16,15 +16,15 @@ class ModelRadarChart {
             case 1:
                 return "cardio";
             case 2:
-                return "energy";
+                return "Energie";
             case 3:
-                return "endurance";
+                return "Endurance";
             case 4:
-                return "strength";
+                return "Force";
             case 5:
-                return "speed";
+                return "Vitesse";
             case 6:
-                return "intensity";
+                return "Intensité";
             default:
                 return 'unknow';
         }

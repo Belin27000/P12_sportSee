@@ -18,11 +18,10 @@ const Home = () => {
     const userActivity = userModel.getUserActivityById(id)
     const averageSessions = userModel.getUserAverageSessionsById(id)
     const userPerf = userModel.getUserPerformanceById(id)
-
     return (
         <div className='Home'>
             <header>
-                <h1>Bonjour <span className='userName'>{user.mainData[0].userFirstName}</span></h1>
+                <h1>Bonjour <span className='userName'>{user.firstName}</span></h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             </header>
             <section className='AllDataProfil'>
@@ -35,10 +34,7 @@ const Home = () => {
                     </article>
                 </section>
                 <aside className='Performance'>
-                    <Energy Energy={user.energyData} type="calories" />
-                    <Energy Energy={user.energyData} type="proteines" />
-                    <Energy Energy={user.energyData} type="glucides" />
-                    <Energy Energy={user.energyData} type="lipides" />
+                    <Energy Energy={user.keyData} />
                 </aside>
             </section>
 

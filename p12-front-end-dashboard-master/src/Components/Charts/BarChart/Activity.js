@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResponsiveContainer, Bar, BarChart, Tooltip, XAxis, YAxis, Legend, CartesianGrid } from 'recharts'
+import { ResponsiveContainer, Bar, BarChart, Tooltip, XAxis, YAxis, Legend, CartesianGrid, Label } from 'recharts'
 import '@/Components/Charts/BarChart/activity.css'
 
 const CustomTooltip = ({ active, payload }) => {
@@ -29,8 +29,8 @@ const Activity = ({ sessions }) => {
                 <Bar name='Poids (kg)' dataKey="kilogram" barSize={7} fill='#282D30' radius={[3, 3, 0, 0]} />
                 <Bar name='Calories brûlées (kCal)' dataKey="calories" barSize={7} fill='#E60000' radius={[3, 3, 0, 0]} />
 
-                <XAxis dataKey='name' />
-                <YAxis orientation='right' />
+                <XAxis tickLine={false} />
+                <YAxis orientation='right' tickLine={false} axisLine={false} />
                 <Legend iconType="circle" verticalAlign='top' align='right' wrapperStyle={{ padding: '1rem' }} />
                 <text x="32" y="1.5rem" dominantBaseline="hanging" fontSize="15" fontWeight="bold">Activité quotidienne</text>
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />

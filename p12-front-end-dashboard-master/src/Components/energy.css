@@ -1,11 +1,10 @@
 .Energy {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    background-color: #FBFBFB;
     border-radius: 10px;
-    padding: .5rem;
+    width: 100%;
 }
 
 .Energy img {
@@ -13,13 +12,34 @@
     height: 3.3rem;
 }
 
+.nutriment {
+    background-color: #FBFBFB;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 0rem;
+    padding: 1rem 51px 1rem 32px;
+    width: 100%;
+}
+
 .energyInfos {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    line-height: 0rem;
+    margin-left: 2rem;
 }
 
+.energyInfos h2 {
+
+    font-size: 20px;
+}
+
+.energyInfos p {
+    font-size: 14px;
+    color: #74798C
+}
+
+/* 
 .evalue {
     font-weight: bold;
     font-size: 1.1rem;
@@ -27,4 +47,4 @@
 
 .type:first-letter {
     text-transform: uppercase;
-}
+} */

@@ -12,3 +12,13 @@
 .Radar .recharts-text {
     font-size: 0.7rem;
 }
+
+.angleAxis {
+    display: none;
+}
+
+.recharts-polar-angle-axis-tick-value {
+    /* transform: translateX(-3rem); */
+    font-size: .7rem;
+    padding: 3rem;
+}

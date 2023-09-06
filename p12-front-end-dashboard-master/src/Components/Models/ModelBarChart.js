@@ -1,6 +1,5 @@
 class ModelBarChart {
     constructor(data) {
-        // console.log(data.sessions);
         this.dataModel = data.sessions.map((item) => {
             return {
                 day: item.day,
