@@ -1,13 +1,9 @@
 import React from 'react';
-import DataModeling_service from '@/_Services/DataModeling_service'
-import AllData from '@/Assets/Api/db.json'
+import DataModeling_service from '@/_Services/Mock_Data_service.js'
+import AllData from '@/Assets/Data/db.json'
 import '@/Pages/Acceuil/home.css'
 import { useParams } from 'react-router-dom';
-import Activity from '@/Components/Charts/BarChart/Activity';
-import AverageSessions from '@/Components/Charts/LineChart/AverageSessions';
-import Intensity from '@/Components/Charts/RadarChart/Intensity';
-import Score from '@/Components/Charts/RadialChart/Score';
-import Energy from '@/Components/Energy';
+import { Activity, AverageSessions, Score, Energy, Intensity } from '@/Pages/index.js';
 
 const Home = () => {
     let { id } = useParams()

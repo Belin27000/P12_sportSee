@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Yoga from '@/Assets/Yoga.png'
-import Swim from '@/Assets/Swim.png'
-import Bycicle from '@/Assets/Bycicle.png'
-import Fitness from '@/Assets/Fitness.png'
+import Yoga from '@/Assets/Images/Yoga.png'
+import Swim from '@/Assets/Images/Swim.png'
+import Bycicle from '@/Assets/Images/Bycicle.png'
+import Fitness from '@/Assets/Images/Fitness.png'
 import '@/Layouts/SideMenu/sideMenu.css'
 
 const SideMenu = () => {

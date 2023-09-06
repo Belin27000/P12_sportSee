@@ -1,7 +1,7 @@
-import Calories from '@/Assets/calories-icon.png';
-import Glucides from '@/Assets/fat-icon.png';
-import Protéines from '@/Assets/protein-icon.png';
-import Lipides from '@/Assets/carbs-icon.png';
+import Calories from '@/Assets/Images/calories-icon.png';
+import Glucides from '@/Assets/Images/fat-icon.png';
+import Protéines from '@/Assets/Images/protein-icon.png';
+import Lipides from '@/Assets/Images/carbs-icon.png';
 class ModelRadialChart {
 
     constructor(data) {

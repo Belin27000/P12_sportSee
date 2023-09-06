@@ -3,6 +3,7 @@ import { ModelLineChart } from "@/Components/Models/ModelLineChart.js";
 import { ModelRadarChart } from "@/Components/Models/ModelRadarChart.js";
 import { ModelRadialChart } from "@/Components/Models/ModelRadialChart.js";
 
+
 class DataModeling_service {
     constructor(Alldata) {
         this.userMainData = Alldata.USER_MAIN_DATA;
@@ -10,6 +11,7 @@ class DataModeling_service {
         this.userAverageSessions = Alldata.USER_AVERAGE_SESSIONS;
         this.userPerformance = Alldata.USER_PERFORMANCE;
     }
+
     getUserMainDataById(userId) {
         const allMainData = this.userMainData.find(user => user.id === parseInt(userId))
 
