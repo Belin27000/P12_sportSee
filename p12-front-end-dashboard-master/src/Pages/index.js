@@ -11,3 +11,9 @@ export { default as AverageSessions } from '@/Components/Charts/LineChart/Averag
 export { default as Score } from '@/Components/Charts/RadialChart/Score';
 export { default as Energy } from '@/Components/Energy';
 export { default as Intensity } from '@/Components/Charts/RadarChart/Intensity';
+
+//DataModeling
+export { default as ModelBarChart } from "@/Components/Models/ModelBarChart";
+export { default as ModelLineChart } from "@/Components/Models/ModelLineChart.js";
+export { default as ModelRadarChart } from "@/Components/Models/ModelRadarChart.js";
+export { default as ModelRadialChart } from "@/Components/Models/ModelRadialChart.js";

@@ -21,4 +21,4 @@ class ModelLineChart {
     }
 }
 
-export { ModelLineChart };
+export default ModelLineChart;

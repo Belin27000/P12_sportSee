@@ -31,4 +31,4 @@ class ModelRadarChart {
     }
 
 }
-export { ModelRadarChart }
+export default ModelRadarChart

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 // import calories from '@/Assets/calories-icon.png'
 // import protein from '@/Assets/protein-icon.png'
 // import glucides from '@/Assets/carbs-icon.png'

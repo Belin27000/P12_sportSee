@@ -1,8 +1,4 @@
-import { ModelBarChart } from "@/Components/Models/ModelBarChart.js";
-import { ModelLineChart } from "@/Components/Models/ModelLineChart.js";
-import { ModelRadarChart } from "@/Components/Models/ModelRadarChart.js";
-import { ModelRadialChart } from "@/Components/Models/ModelRadialChart.js";
-
+import { ModelBarChart, ModelLineChart, ModelRadarChart, ModelRadialChart } from '@/Pages/index.js';
 
 class DataModeling_service {
     constructor(Alldata) {

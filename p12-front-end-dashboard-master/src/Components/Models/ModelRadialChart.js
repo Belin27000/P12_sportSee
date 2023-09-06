@@ -21,4 +21,4 @@ class ModelRadialChart {
         ]
     }
 }
-export { ModelRadialChart }
+export default ModelRadialChart

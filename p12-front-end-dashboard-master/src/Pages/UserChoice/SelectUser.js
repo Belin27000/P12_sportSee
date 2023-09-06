@@ -3,22 +3,22 @@ import AllData from '@/Assets/Data/db.json'
 import { useNavigate } from 'react-router-dom';
 import '@/Pages/UserChoice/selectUser.css'
 
+
 const SelectUser = () => {
     const userData = AllData.USER_MAIN_DATA
-    console.log(userData);
 
     let navigate = useNavigate()
 
     const [userChoice, setUserChoice] = useState('');
 
     const handleUserChoice = () => {
-        console.log(userChoice);
         navigate('/home/' + userChoice)
     }
     const handleSelectedChange = (event) => {
 
         setUserChoice(event.target.value)
     }
+
 
 
     return (
