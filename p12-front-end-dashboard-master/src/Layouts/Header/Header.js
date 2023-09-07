@@ -12,8 +12,8 @@ const Header = () => {
             <nav className='NavBar'>
                 <ul>
 
-                    <li className='NavLink'><Link to="#">Acceuil</Link></li>
-                    <li className='NavLink'><Link to="/home">Profil</Link></li>
+                    <li className='NavLink'><Link to="/home">Acceuil</Link></li>
+                    <li className='NavLink'><Link to="/ComingSoon">Profil</Link></li>
                     <li className='NavLink'><Link to="/ComingSoon">Réglage</Link></li>
                     <li className='NavLink'><Link to="/ComingSoon">Communauté</Link></li>
                 </ul>

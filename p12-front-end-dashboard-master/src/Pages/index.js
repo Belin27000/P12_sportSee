@@ -13,7 +13,7 @@ export { default as Energy } from '@/Components/Energy';
 export { default as Intensity } from '@/Components/Charts/RadarChart/Intensity';
 
 //DataModeling
-export { default as ModelBarChart } from "@/Components/Models/ModelBarChart";
-export { default as ModelLineChart } from "@/Components/Models/ModelLineChart.js";
-export { default as ModelRadarChart } from "@/Components/Models/ModelRadarChart.js";
-export { default as ModelRadialChart } from "@/Components/Models/ModelRadialChart.js";
+export { default as ModelBarChartData } from "@/Components/Models/ModelBarChartData";
+export { default as ModelLineChartData } from "@/Components/Models/ModelLineChartData.js";
+export { default as ModelRadarChartData } from "@/Components/Models/ModelRadarChartData.js";
+export { default as ModelRadialChartData } from "@/Components/Models/ModelRadialChartData.js";

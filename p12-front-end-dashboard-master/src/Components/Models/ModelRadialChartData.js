@@ -2,7 +2,7 @@ import Calories from '@/Assets/Images/calories-icon.png';
 import Glucides from '@/Assets/Images/fat-icon.png';
 import Protéines from '@/Assets/Images/protein-icon.png';
 import Lipides from '@/Assets/Images/carbs-icon.png';
-class ModelRadialChart {
+class ModelRadialChartData {
 
     constructor(data) {
         const kCalFormat = new Intl.NumberFormat("en-IN", {
@@ -21,4 +21,4 @@ class ModelRadialChart {
         ]
     }
 }
-export default ModelRadialChart
+export default ModelRadialChartData

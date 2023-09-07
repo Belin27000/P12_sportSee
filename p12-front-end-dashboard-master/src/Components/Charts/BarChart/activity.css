@@ -8,17 +8,12 @@
     font-size: 0.7rem;
 }
 
-/* .recharts-surface {
-    height: 400px;
-    display: flex;
-    justify-content: space-between;
-} */
-
 .custom-tooltip {
     color: white;
-    font-size: .5rem;
-    height: 3rem;
+    font-size: .4rem;
+    height: 3.5rem;
+    width: 2rem;
     display: flex;
     flex-direction: column;
-    /* justify-content: start; */
+    justify-content: center;
 }

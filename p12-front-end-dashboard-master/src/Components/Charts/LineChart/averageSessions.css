@@ -27,8 +27,9 @@
 
 .averageCustomTtip {
     color: black;
+    background-color: white;
     font-size: .5rem;
-    padding: 0;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
 }

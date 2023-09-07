@@ -1,8 +1,4 @@
 import React from 'react';
-// import calories from '@/Assets/calories-icon.png'
-// import protein from '@/Assets/protein-icon.png'
-// import glucides from '@/Assets/carbs-icon.png'
-// import lipides from '@/Assets/fat-icon.png'
 import '@/Components/energy.css'
 
 

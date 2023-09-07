@@ -26,7 +26,7 @@ const SideMenu = () => {
 
             </div>
             <div className='SideMenuCopy'>
-                Copiryght, SportSee 2020
+                Copyright, SportSee 2020
             </div>
         </aside>
     );

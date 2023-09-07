@@ -19,13 +19,12 @@ const Activity = ({ sessions }) => {
     sessions.dataModel.forEach((element, index) => {
         element.name = index + 1;
     });
-    // console.log(sessions)
     return (
         <ResponsiveContainer ResponsiveContainer width="100%" height="55%" >
 
 
             <BarChart data={sessions.dataModel} className="ActivityChart" >
-                <Tooltip content={<CustomTooltip />} wrapperStyle={{ width: 39, backgroundColor: '#E60000' }} />
+                <Tooltip content={<CustomTooltip />} wrapperStyle={{ backgroundColor: '#E60000' }} />
                 <Bar name='Poids (kg)' dataKey="kilogram" barSize={7} fill='#282D30' radius={[3, 3, 0, 0]} />
                 <Bar name='Calories brûlées (kCal)' dataKey="calories" barSize={7} fill='#E60000' radius={[3, 3, 0, 0]} />
 

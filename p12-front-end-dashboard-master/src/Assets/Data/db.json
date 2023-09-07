@@ -7,12 +7,12 @@
                 "lastName": "Dovineau",
                 "age": 31
             },
-            "todayScore": 0.12,
+            "todayScore": 0.32,
             "keyData": {
-                "calorieCount": 1930,
-                "proteinCount": 155,
-                "carbohydrateCount": 290,
-                "lipidCount": 50
+                "calorieCount": 4930,
+                "proteinCount": 15,
+                "carbohydrateCount": 90,
+                "lipidCount": 150
             }
         },
         {
@@ -22,7 +22,7 @@
                 "lastName": "Ratorez",
                 "age": 34
             },
-            "todayScore": 0.3,
+            "score": 0.4,
             "keyData": {
                 "calorieCount": 3500,
                 "proteinCount": 100,
@@ -57,7 +57,7 @@
                 },
                 {
                     "day": "2020-07-05",
-                    "kilogram": 80,
+                    "kilogram": 180,
                     "calories": 160
                 },
                 {
@@ -68,7 +68,7 @@
                 {
                     "day": "2020-07-07",
                     "kilogram": 76,
-                    "calories": 390
+                    "calories": 90
                 }
             ]
         },
@@ -78,21 +78,21 @@
                 {
                     "day": "2020-07-01",
                     "kilogram": 70,
-                    "calories": 240
+                    "calories": 540
                 },
                 {
                     "day": "2020-07-02",
-                    "kilogram": 69,
+                    "kilogram": 369,
                     "calories": 220
                 },
                 {
                     "day": "2020-07-03",
-                    "kilogram": 70,
-                    "calories": 280
+                    "kilogram": 270,
+                    "calories": 80
                 },
                 {
                     "day": "2020-07-04",
-                    "kilogram": 70,
+                    "kilogram": 170,
                     "calories": 500
                 },
                 {
@@ -119,11 +119,11 @@
             "sessions": [
                 {
                     "day": 1,
-                    "sessionLength": 30
+                    "sessionLength": 3
                 },
                 {
                     "day": 2,
-                    "sessionLength": 23
+                    "sessionLength": 3
                 },
                 {
                     "day": 3,
@@ -131,7 +131,7 @@
                 },
                 {
                     "day": 4,
-                    "sessionLength": 50
+                    "sessionLength": 5
                 },
                 {
                     "day": 5,
@@ -143,7 +143,7 @@
                 },
                 {
                     "day": 7,
-                    "sessionLength": 60
+                    "sessionLength": 160
                 }
             ]
         },
@@ -152,11 +152,11 @@
             "sessions": [
                 {
                     "day": 1,
-                    "sessionLength": 30
+                    "sessionLength": 130
                 },
                 {
                     "day": 2,
-                    "sessionLength": 40
+                    "sessionLength": 140
                 },
                 {
                     "day": 3,
@@ -172,11 +172,11 @@
                 },
                 {
                     "day": 6,
-                    "sessionLength": 50
+                    "sessionLength": 150
                 },
                 {
                     "day": 7,
-                    "sessionLength": 50
+                    "sessionLength": 10
                 }
             ]
         }
@@ -194,11 +194,11 @@
             },
             "data": [
                 {
-                    "value": 80,
+                    "value": 140,
                     "kind": 1
                 },
                 {
-                    "value": 120,
+                    "value": 20,
                     "kind": 2
                 },
                 {
@@ -206,11 +206,11 @@
                     "kind": 3
                 },
                 {
-                    "value": 50,
+                    "value": 150,
                     "kind": 4
                 },
                 {
-                    "value": 200,
+                    "value": 100,
                     "kind": 5
                 },
                 {

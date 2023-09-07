@@ -1,6 +1,6 @@
 .CommingSoon {
-    /* margin-top: 10rem; */
     height: 100vh;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;

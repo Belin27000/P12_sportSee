@@ -1,4 +1,4 @@
-class ModelLineChart {
+class ModelLineChartData {
     constructor(data) {
         this.dataModel = data.sessions.map((item) => {
             return {
@@ -21,4 +21,4 @@ class ModelLineChart {
     }
 }
 
-export default ModelLineChart;
+export default ModelLineChartData;

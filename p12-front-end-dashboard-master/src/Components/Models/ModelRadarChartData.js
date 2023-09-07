@@ -1,4 +1,4 @@
-class ModelRadarChart {
+class ModelRadarChartData {
     constructor(data) {
         this.allData = {
             // kind: {},
@@ -31,4 +31,4 @@ class ModelRadarChart {
     }
 
 }
-export default ModelRadarChart
+export default ModelRadarChartData

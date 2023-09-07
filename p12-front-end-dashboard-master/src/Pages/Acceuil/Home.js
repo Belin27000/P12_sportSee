@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import DataModeling_service from '@/_Services/Mock_Data_service.js'
-import AllData from '@/Assets/Data/db.json'
 import '@/Pages/Acceuil/home.css'
+import AllData from '@/Assets/Data/db.json'
 import { useParams } from 'react-router-dom';
 import { Activity, AverageSessions, Score, Energy, Intensity } from '@/Pages/index.js';
 import Switch from '../../Components/Switch/Switch.js';
@@ -11,10 +11,14 @@ import ApiDataService from '@/_Services/Api_Data_service.js'
 
 const Home = () => {
     let { id } = useParams()
+    const flag = useRef(false)
     const [userApi, setUserApi] = useState(null)
     const [perfUserApi, setPerfUserApi] = useState(null)
+    const [activityUserApi, setActivityUserApi] = useState(null)
+    const [sessionUserApi, setSessionUserApi] = useState(null)
     const [isToggled, setIsToggled] = useState(false)
     const [loading, setLoading] = useState(true)
+    const [apiError, setApiError] = useState(false);
 
 
     const userData = AllData
@@ -25,56 +29,73 @@ const Home = () => {
     const userPerf = userModel.getUserPerformanceById(id)
 
     useEffect(() => {
-        const fetchmainData = async () => {
-            try {
-                const response = await ApiDataService.GetMaindata(id)
-                // console.log(response);
-                setUserApi(response)
-
-            } catch (error) {
-                console.error("Une erreur s'est produite :", error)
-            }
+        if (flag.current === false) {
+            fecthData();
         }
-        fetchmainData()
-
+        return () => flag.current = true
     }, [])
 
-    useEffect(() => {
-        const fetchPerfData = async () => {
-            try {
-                const response = await ApiDataService.GetPerfData(id)
-                setPerfUserApi(response)
-                setLoading(false)
-            } catch (error) {
-                console.error("Une erreur s'est produite :", error)
+    const fecthData = async () => {
+        const mainDataResponse = await ApiDataService.GetMaindata(id)
+        if (mainDataResponse) {
+            setUserApi(mainDataResponse)
+            const perfUserResponse = await ApiDataService.GetPerfData(id)
+            setPerfUserApi(perfUserResponse)
+
+            const activityUserResponse = await ApiDataService.GetUserActivity(id)
+            setActivityUserApi(activityUserResponse)
+
+            const sessionUserResponse = await ApiDataService.GetUserSession(id)
+            setSessionUserApi(sessionUserResponse)
+            setLoading(false)
+        } else {
+            setApiError(true);
+            if (!isToggled) {
+                setUserApi(user); // Utilisez les données du mock pour userApi
+                setPerfUserApi(userPerf); // Utilisez les données du mock pour perfUserApi
+                setActivityUserApi(userActivity); // Utilisez les données du mock pour activityUserApi
+                setSessionUserApi(averageSessions); // Utilisez les données du mock pour sessionUserApi
+                setLoading(false);
+                setIsToggled(true)
+            } else {
+                setTimeout(() => {
+                    alert('Les données API n\'ont pas pu être chargées. Vous visualisez les données du Mock')
+                    setLoading(false)
+
+                }, 3000)
             }
         }
-        fetchPerfData()
-    }, [])
+    }
+    const handleToggleClick = () => {
+        if (!apiError) {
+            setIsToggled(!isToggled);
+        } else {
+            alert('Les données API n\'ont pas pu être chargées. Vous visualisez les données du Mock')
+        }
+    };
 
 
     if (loading) return (
-        <h3>Chargement des données en cours</h3>
+        <h3>Chargement des données en cours...</h3>
     )
-    console.log(perfUserApi);
-    console.log(userPerf);
     return (
         <div className='Home'>
             <header>
                 <div className='NameProfil'>
                     <h1>Bonjour <span className='userName'>{user.firstName}</span></h1>
-                    <Switch isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} />
+                    <Switch isToggled={isToggled} onToggle={handleToggleClick} />
+                    {/* <Switch isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)} /> */}
                 </div>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             </header>
 
             <section className='AllDataProfil'>
                 <section className='Activity'>
-                    <Activity sessions={userActivity} />
+                    <Activity sessions={isToggled ? userActivity : activityUserApi} />
                     <article>
-                        <AverageSessions averageSessions={averageSessions} />
+                        <AverageSessions averageSessions={isToggled ? averageSessions : sessionUserApi} />
                         <Intensity kind={isToggled ? userPerf : perfUserApi} />
-                        <Score user={user} />
+                        <Score user={isToggled ? user : userApi} />
                     </article>
                 </section>
                 <aside className='Performance'>

@@ -1,19 +1,15 @@
 import axios from 'axios'
-import { ModelBarChart, ModelLineChart, ModelRadarChart, ModelRadialChart } from '@/Pages/index.js';
+import { ModelBarChartData, ModelLineChartData, ModelRadarChartData, ModelRadialChartData } from '@/Pages/index.js';
 
 const GetMaindata = async (id) => {
-    // console.log(id);
     const url = 'http://localhost:3000/user/' + id
     try {
         const response = await axios(url)
 
-        // console.log(response.data.data);
-        return new ModelRadialChart(response.data.data)
+        return new ModelRadialChartData(response.data.data)
     } catch (error) {
-        // console.log(error)
-        // console.log("tu l'a");
+        console.log(error)
     }
-
 
 }
 const GetPerfData = async (id) => {
@@ -22,21 +18,40 @@ const GetPerfData = async (id) => {
     const perfUrl = baseUrl + '/performance'
     try {
         const response = await axios(perfUrl)
-        return new ModelRadarChart(response.data.data)
+        return new ModelRadarChartData(response.data.data)
     } catch (error) {
-
+        console.log(error);
     }
+}
 
-
+const GetUserActivity = async (id) => {
+    const baseUrl = 'http://localhost:3000/user/' + id;
+    const activityUrl = baseUrl + '/activity'
+    try {
+        const response = await axios(activityUrl)
+        return new ModelBarChartData(response.data.data)
+    } catch (error) {
+        console.log(error);
+    }
 
 }
 
-//http://localhost:3000/user/${userId}/activity 
-//http://localhost:3000/user/${userId}/average-sessions 
-//http://localhost:3000/user/${userId}/performance
+const GetUserSession = async (id) => {
+    const baseUrl = 'http://localhost:3000/user/' + id;
+    const sessionUrl = baseUrl + '/average-sessions '
+    try {
+        const response = await axios(sessionUrl)
+        return new ModelLineChartData(response.data.data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
 const ApiDataService = {
     GetMaindata,
-    GetPerfData
+    GetPerfData,
+    GetUserActivity,
+    GetUserSession
 }
 export default ApiDataService
