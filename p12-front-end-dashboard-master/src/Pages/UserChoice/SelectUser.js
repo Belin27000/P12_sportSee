@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import AllData from '@/Assets/Data/db.json'
 import { useNavigate } from 'react-router-dom';
 import '@/Pages/UserChoice/selectUser.css'

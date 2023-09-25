@@ -33,10 +33,12 @@ const Home = () => {
             fecthData();
         }
         return () => flag.current = true
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const fecthData = async () => {
         const mainDataResponse = await ApiDataService.GetMaindata(id)
+        // console.log(mainDataResponse);
         if (mainDataResponse) {
             setUserApi(mainDataResponse)
             const perfUserResponse = await ApiDataService.GetPerfData(id)

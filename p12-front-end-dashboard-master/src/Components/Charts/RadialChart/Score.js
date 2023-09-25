@@ -7,6 +7,8 @@ import '@/Components/Charts/RadialChart/score.css'
 const Score = ({ user }) => {
 
     let Convertdata = [{ todayScore: user.todayScore }]
+    // console.log(Convertdata);
+    // console.log(user.todayScore);
 
     return (
         <div className='Score'>

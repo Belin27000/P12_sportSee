@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResponsiveContainer, Bar, BarChart, Tooltip, XAxis, YAxis, Legend, CartesianGrid, Label } from 'recharts'
+import { ResponsiveContainer, Bar, BarChart, Tooltip, XAxis, YAxis, Legend, CartesianGrid } from 'recharts'
 import '@/Components/Charts/BarChart/activity.css'
 
 const CustomTooltip = ({ active, payload }) => {
